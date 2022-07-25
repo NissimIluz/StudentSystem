@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        * {
+            direction: rtl;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>רישום באמצעות CSV</title>
+    <script type="text/javascript" src="./registerByCsv.js">
+        var dojoConfig = {
+            async: true,
+            parseOnLoad: true
+        }
+    </script>
+    <script type="text/javascript" src="./services/http.js">
+        var dojoConfig = {
+            async: true,
+            parseOnLoad: true
+        }
+    </script>
+    <link rel="stylesheet" href="./registerByCsv.css">
+</head>
+
+<body>
+    <h1> רישום סטודנטים בעזרת קובץ CSV</h1>
+    <a href="./index.html">חזור</a>
+    <div class="input-container">
+        <div>
+            <input id="input" type="file" accept=".csv">
+        </div>
+        <div class="button">
+            <button onclick="uplaud()">רשום</button>
+        </div>
+        <div id="resultMassageContainer" class="message">
+            <p id="resultMassage"></p>
+        </div>
+        <div id="students"></div>
+
+        <div id="selectedStudents"></div>
+
+        <div id="selectedButton"></div>
+    </div>
+</body>
+
+</html>

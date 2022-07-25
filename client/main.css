@@ -1,0 +1,38 @@
+.form-label-input{
+    width: 252px;
+    padding: 10px;
+    height: 25px;
+}
+.input-container{
+    float: left;
+    padding: 0;
+    margin: 0;
+    width: 160px;
+}
+.submit {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+}
+.example{
+    font-size: 11px;
+    color: #a19f9f;
+}
+.date-input {
+    width: 120px;
+}
+.success {
+    background: #63db63;
+    color: #034203;
+    box-shadow: 0 0 14px 2px #355e28;
+}
+.failed{
+    background: #db6e63;
+    color: #420303;
+    box-shadow: 0 0 14px 2px #5e2828;
+}
+.message {
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+}

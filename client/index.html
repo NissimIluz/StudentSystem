@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        * {
+            direction: rtl;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>רישום תלמידים</title>
+    <script type="text/javascript" src="./main.js">
+        var dojoConfig = {
+            async: true,
+            parseOnLoad: true
+        }
+    </script>
+     <script type="text/javascript" src="./services/http.js">
+        var dojoConfig = {
+            async: true,
+            parseOnLoad: true
+        }
+    </script>
+    <link rel="stylesheet" href="./main.css">
+</head>
+
+<body>
+    <div class="container-register">
+        <h1>טופס רישום תלמידים</h1>
+        <form onsubmit="{register(); return false;}" dir="rtl">
+
+            <div class="form-label-input">
+                <label for="school">מוסד:</label>
+                <p class="input-container">
+                    <input class="input" required type="text" id="school" name="school" value="מוסד" disabled="true">
+                </p>
+            </div>
+            <div class="form-label-input">
+                <label for="id">מספר ת.ז.:</label>
+
+                <p class="input-container">
+                    <input class="input" required type="number" id="id" name="id" value="" placeholder="אכנס מספר ת.ז.">
+                </p>
+            </div>
+
+            <div class="form-label-input">
+                <label for="lastName">שם משפחה:</label>
+                <p class="input-container">
+                    <input class="input" required type="text" id="lastName" name="lastName" value=""
+                        placeholder="אכנס שם משפחה" pattern="[א-ת]*">
+                </p>
+            </div>
+
+            <div class="form-label-input">
+                <label for="firstName">שם פרטי:</label>
+                <p class="input-container">
+                <p class="input-container">
+                    <input class="input" required type="text" id="firstName" name="firstName" value=""
+                        placeholder="אכנס שם פרטי" pattern="[א-ת]*">
+                </p>
+                </p>
+            </div>
+
+            <div class="form-label-input">
+                <label for="maleOrFemale">מין:</label>
+                <p class="input-container">
+                    <select class="input" id="maleOrFemale" name="maleOrFemale" value="" placeholder="מין זכר/נקבה">
+                        <option value="0">נקבה</option>
+                        <option value="1">זכר</option>
+                    </select>
+                </p>
+            </div>
+
+            <div class="form-label-input">
+                <label for="homePhone">טלפון בבית:</label>
+                <p class="input-container">
+                    <input class="input" required type="tel" id="homePhone" name="homePhone" value=""
+                        placeholder="אכנס טלפון בבית" pattern="0[0-9]{1}-[0-9]{7}">
+                    <span class="example">(0X-XXXXXXX)</span>
+                </p>
+            </div>
+
+            <div class="form-label-input">
+                <label for="mobilePhone">טלפון נייד:</label>
+                <p class="input-container">
+                    <input class="input" required type="tel" id="mobilePhone" name="mobilePhone" value=""
+                        placeholder="אכנס מספר נייד" pattern="05[0-9]{1}-[0-9]{7}">
+                    <span class="example">(05X-XXXXXXX)</span>
+                </p>
+            </div>
+
+            <div class="form-label-input">
+                <label for="email">כתובת מייל:</label>
+                <p class="input-container">
+                    <input class="input" required type="tel" id="email" name="email" value=""
+                        placeholder="אכנס כתובת מייל">
+                </p>
+            </div>
+
+            <div class="form-label-input">
+                <label for="birthDate">תאריך לידה:</label>
+                <p class="input-container">
+                    <input class="input date-input" required type="date" id="birthDate" name="birthDate" value=""
+                        placeholder="תאריך לידה">
+                </p>
+            </div>
+
+            <div class="form-label-input">
+                <label for="CountryOfBirth">ארץ לידה:</label>
+                <p class="input-container">
+                    <input class="input" required type="text" id="CountryOfBirth" name="CountryOfBirth" value=""
+                        placeholder="אכנס ארץ לידה">
+                </p>
+            </div>
+
+            <div class="form-label-input">
+                <label for="immigrationDate">תאריך עליה:</label>
+                <p class="input-container">
+                    <input class="input date-input" required type="date" id="immigrationDate" name="immigrationDate" value=""
+                        placeholder="אכנס תאריך עליה">
+                </p>
+            </div>
+
+            <div class="form-label-input">
+                <label for="nation">לאום:</label>
+                <p class="input-container">
+                    <input class="input" required type="text" id="nation" name="nation" value=""
+                        placeholder="אכנס לאום">
+                </p>
+            </div>
+            <div class="submit form-label-input">
+                <input class="submit" required type="submit" value="שלח">
+            </div>
+            <div id="resultMassageContainer" class="submit form-label-input message">
+            <p id="resultMassage"></p>
+        </div>
+        </form>
+    </div>
+    <script>afterViewInit()</script>
+<button onclick="register()">register()"</button>
+<div class="container-register">
+    <a href="./registerByCsv.html">רישום באמצעות קובץ CSV</a>
+</div>
+</body>
+
+</html>
