@@ -140,9 +140,11 @@ namespace Services.Services
                             Email = studentStringArray[7],
                             BirthDate = DateTime.Parse(studentStringArray[8]),
                             CountryOfBirth = studentStringArray[9],
-                            ImmigrationDate = DateTime.Parse(studentStringArray[10]),
                             Nation = studentStringArray[11]
                         };
+                        DateTime immigrationDate;
+                        DateTime.TryParse(studentStringArray[10], out immigrationDate);
+                        student.ImmigrationDate = immigrationDate;
                         students.Add(student);
                     }
                 }

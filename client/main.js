@@ -5,7 +5,7 @@ function afterViewInit() {
     resultMassageContainer.style.display = "none";
 }
 function register() {
-    const registerFrom1 = {
+    const registerFrom = {
         id: id.value,
         school: school.value,
         lastName: lastName.value,
@@ -16,25 +16,11 @@ function register() {
         email: email.value,
         birthDate: birthDate.value,
         CountryOfBirth: CountryOfBirth.value,
-        immigrationDate: immigrationDate.value,
+        immigrationDate: immigrationDate.value? immigrationDate.value: null,
         nation: nation.value
        
     };
-    const registerFrom = {
-        id: 203318977,
-        school: 'בית ספר',
-        lastName: 'מפשחה',
-        firstName: 'פרטי',
-        maleOrFemale: 0,
-        homePhone: '08-4561234',
-        mobilePhone: '052-4561234',
-        email: 'email@sad.co.il',
-        birthDate: new Date(),
-        CountryOfBirth: 'ישראל',
-        immigrationDate: new Date(),
-        nation: 'ישראל'
-       
-    };
+   
     var resultPromise = post('Students/Register',registerFrom);
     resultPromise.then(result => showMassage(result));
     return false;

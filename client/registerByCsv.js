@@ -19,7 +19,6 @@ function uplaud() {
             students.innerHTML  = "";
             selectedButton.innerHTML = "";
             selectedStudents.innerHTML="";
-            debugger
             if(result.length > 0) {
                 students.innerHTML  = "<div >כפילויות: </div>";
                 selectedStudents.innerHTML="נבחרו:";
@@ -37,7 +36,6 @@ function getStudentRow(data) {
     return `<div class="student-row">${data.id} ${data.firstName} ${data.lastName}  <button onclick="select(${data.id})">בחר</button> </div>`
 }
 function select(id){
-    debugger
     if (!selected.includes(id)) {
         selectedStudents.innerHTML += `<div class="student-row">${id} </div>`
         selected.push(id);
